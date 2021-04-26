@@ -110,8 +110,7 @@ function changePosition() {
     var input = document.getElementById("position");
     var progress_bar = document.getElementById("progress_position");
     var duration = video.duration;
-    if (input.value > 0)
-        video.currentTime = (input.value) / 100 * duration;
+    video.currentTime = (input.value) / 100 * duration;
     progress_bar.value = input.value;
 }
 
@@ -173,3 +172,7 @@ video.ontimeupdate = function() {
         input.value = video.currentTime / duration * 100
     progress_bar.value = input.value;
 };
+
+window.onbeforeunload = function() {
+    return 'Are you sure you want to leave?';
+}
