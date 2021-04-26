@@ -1,0 +1,79 @@
+.movies_list,
+.movie_form,
+.video_player {
+    margin-left: 100px;
+    margin-right: 200px;
+    margin-top: 15px;
+}
+
+.movies_list {
+    padding: 10px;
+    background-color: goldenrod;
+}
+
+.controls {
+    padding: 10px;
+    margin-top: 15px;
+    background-color: gray;
+    margin-left: 100px;
+    width: 80vw;
+}
+
+.movie {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.movie_form {
+    padding: 10px;
+    background-color: greenyellow;
+}
+
+.add_movie_form {
+    padding-top: 15px;
+}
+
+.form_item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.video_player {
+    margin-bottom: 15px;
+}
+
+.movie_link,
+.move_up_button,
+.move_down_button,
+.remove_button,
+.add_movie_button {
+    cursor: pointer;
+}
+
+.movie_link {
+    color: blue;
+    text-decoration: underline;
+}
+
+.theater {
+    -webkit-transform: scale(1.5, 1.5);
+    position: fixed;
+    left: 400px;
+    top: 100px;
+    border-right: 100% solid black;
+    border-left: 100% solid black;
+    margin: auto;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+}
+
+input {
+    width: 30vw;
+}
+
+progress {
+    width: 100%;
+}

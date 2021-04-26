@@ -1,0 +1,73 @@
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Video player</title>
+    <link href='player.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div>
+        <div class="movies_list">
+            <h2>Movies playlist</h2>
+            <select id="select" class="movies_wrapper" multiple="multiple">
+                <option selected onclick = 'runVideo("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4")'>Some ad</option>
+                <option onclick = 'runVideo("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4")'>Big Buck Bunny</option>
+            </select>
+            <button onclick='moveUp()' class="move_up_button">↑</button>
+            <button onclick='moveDown()' class="move_down_button">↓</button>
+            <button onclick='remove()' class="remove_button"><img src="images/minus.png"/></button>
+        </div>
+        <div class="movie_form">
+            <h2>Add movie to playlist</h2>
+            <form class="add_movie_form">
+                <div class="form_item movie_title">
+                    <label for="movie_title">Enter movie title: </label>
+                    <input type="text" name="movie_title" id="movie_title" value="Robot" required>
+                </div>
+                <div class="form_item movie_url">
+                    <label for="movie_url">Enter movie url: </label>
+                    <input type="text" name="movie_url" id="movie_url" value="http://techslides.com/demos/sample-videos/small.mp4" required>
+                </div>
+                <div class="form_item add_movie">
+                    <button class="add_movie_button"><img src="images/plus.png"/></button>
+                </div>
+            </form>
+        </div>
+        <div id="video_id" class="video_player">
+            <video id="video" width="720px" autoplay controls src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"></video>
+        </div>
+        <div class="controls">
+            <h2>Controls</h2>
+            <div>
+                <label for="volume">Volume</label>
+                <input onchange="changeVolume()" type="range" id="volume" name="volume" min="0" max="100" value="100">
+                <progress id="progress_volume" value='100' max="100"></progress>
+            </div>
+            <br>
+            <div>
+                <label for="position">Position</label>
+                <input onchange="changePosition()" type="range" id="position" name="position" min="0" max="100" value="0">
+                <progress id="progress_position" value="0" max="100"></progress>
+            </div>
+            <br>
+            <div>
+                <button onclick='maximize()'>Max</button>
+            </div>
+            <br>
+            <div>
+                <button onclick='wide()'>Szeroko</button>
+            </div>
+        </div>
+    </div>
+    <script src='player.js'></script>
+    <script type='text/javascript'>
+    </script>
+</body>
+
+</html>
