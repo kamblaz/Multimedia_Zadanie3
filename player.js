@@ -25,7 +25,9 @@
 })();
 
 function runVideo(link) {
+    window.localStorage.setItem(video.src, video.currentTime);
     document.getElementById('video').setAttribute('src', link)
+    video.currentTime = window.localStorage.getItem(video.src);
     document.getElementById('video').muted = 0;
 }
 
@@ -174,5 +176,9 @@ video.ontimeupdate = function() {
 };
 
 window.onbeforeunload = function() {
-    return 'Are you sure you want to leave?';
+    window.localStorage.setItem(video.src, video.currentTime);
+}
+
+window.onload = function() {
+    video.currentTime = window.localStorage.getItem(video.src);
 }
